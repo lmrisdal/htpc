@@ -1,0 +1,17 @@
+[Unit]
+Description=BLE controller Wake-on-LAN trigger
+After=bluetooth.target network-online.target
+Wants=bluetooth.target network-online.target
+
+[Service]
+ExecStart=/opt/controller-wake/venv/bin/python3 /opt/controller-wake/controller_wake.py
+Restart=on-failure
+RestartSec=5
+# Hardening (optional, safe for this workload)
+NoNewPrivileges=true
+ProtectSystem=strict
+ReadWritePaths=/var/log
+ProtectHome=true
+
+[Install]
+WantedBy=multi-user.target
