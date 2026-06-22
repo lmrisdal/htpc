@@ -5,8 +5,7 @@
 # --- CONFIG ---------------------------------------------------------------
 # Substring(s) matching your HDMI/DP audio device's FriendlyName.
 # Find yours with:
-#   Get-PnpDevice -Class MEDIA | Where-Object Status -eq 'OK' |
-#       Format-Table FriendlyName, InstanceId -AutoSize
+#   Get-PnpDevice -Class MEDIA | Where-Object Status -eq 'OK' | Format-Table FriendlyName, InstanceId -AutoSize
 # Typical names: "NVIDIA High Definition Audio", "AMD High Definition Audio".
 $NamePatterns = @(
     'NVIDIA High Definition Audio'

@@ -5,7 +5,7 @@
 $ErrorActionPreference = 'Stop'
 
 # Where the worker script lives. Adjust if you put it elsewhere.
-$scriptPath = 'C:\Scripts\htpc-audio-resume\restart-hdmi-audio.ps1'
+$scriptPath = "$env:USERPROFILE\Documents\htpc\htpc-audio-resume\restart-hdmi-audio.ps1"
 
 if (-not (Test-Path $scriptPath)) {
     throw "Script not found at $scriptPath - copy restart-hdmi-audio.ps1 there first (or edit this path)."
