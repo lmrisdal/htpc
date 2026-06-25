@@ -12,6 +12,17 @@ target PC.
 controller powers on → BLE advert seen → MAC matches whitelist → WoL magic packet → PC wakes
 ```
 
+
+## The flow
+
+```
+controller powers on
+        │  (BLE advertisement)
+        ▼
+controller-wake  ──  Wake-on-LAN magic packet  ──▶  HTPC wakes from sleep
+```
+
+
 ## Intended setup
 
 A small **Bluetooth-host VM** on Proxmox with a USB BT dongle passed through.
